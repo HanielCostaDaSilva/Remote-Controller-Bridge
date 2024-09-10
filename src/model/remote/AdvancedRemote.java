@@ -1,3 +1,5 @@
+package model.remote;
+import model.device.Device;
 public class AdvancedRemote extends BasicRemote{
 
     public AdvancedRemote (Device device){

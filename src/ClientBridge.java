@@ -1,21 +1,29 @@
 import model.device.Device;
+import model.device.DigitalRadio;
+import model.device.TV;
+import model.remote.AdvancedRemote;
 import model.remote.BasicRemote;
 
 
 public class ClientBridge {
     public static void main(String[] args) {
         Device tv = new TV();
-        Remote remote = new BasicRemote(tv);
+        BasicRemote remote = new BasicRemote(tv);
 
-        remote.turnOn();
+        remote.togglePower();
         remote.volumeUp();
         remote.channelUp();
-
-        Device radio = new Radio();
-        Remote advancedRemote = new AdvancedRemote(radio);
-
-        advancedRemote.turnOn();
+        System.out.println(tv);
+        
+        Device radio = new DigitalRadio();
+        
+        AdvancedRemote advancedRemote = new AdvancedRemote(radio);
+        advancedRemote.togglePower();
         advancedRemote.volumeUp();
+        System.out.println(radio);
+        
+        remote.togglePower();
         advancedRemote.mute();
+        System.out.println(radio);
     }
 }

@@ -1,9 +1,9 @@
-package model.remote;
+package model.device;
 
 public class DigitalRadio extends Device{
     String modulation ="";
     
-    public Sting getModulation(){
+    public String getModulation(){
         return this.modulation ;
     }
     

@@ -3,11 +3,11 @@ import model.device.Device;
 import model.remote.BasicRemote;
 
 public class BasicRemote{
-    Device device;
+    protected Device device;
 
     BasicRemote(){}
 
-    BasicRemote(Device device){
+    public BasicRemote(Device device){
         this.device = device;
     }
     
@@ -23,27 +23,27 @@ public class BasicRemote{
     }
 
 
-    void volumeDown(){
+    public void volumeDown(){
         int actualVolume= this.device.getVolume();
         int newValue = (actualVolume - 1 < 0 ? 0 : actualVolume - 1);
         this.device.setVolume(newValue);
     }
 
 
-    void volumeUp(){
+    public void volumeUp(){
         int actualVolume= this.device.getVolume();
         //int newValue = (actualVolume + 1 >  ? 0 : actualVolume - 1);
         int newValue = actualVolume + 1;
         this.device.setVolume(newValue);
     }
 
-    void channelDown(){
+    public void channelDown(){
         int actualChannel= this.device.getChannel();
         int newValue = (actualChannel - 1 < 1 ? 1 : actualChannel - 1);
         this.device.setChannel(newValue);
     };
 
-    void channelUp(){
+    public void channelUp(){
         int actualChannel= this.device.getChannel();
         int newValue = actualChannel + 1;
         this.device.setChannel(newValue);

@@ -1,5 +1,4 @@
-package model.remote;
-import model.device.Device;
+package model.device;
 
 public class TV extends Device{
     boolean smartTV =false;

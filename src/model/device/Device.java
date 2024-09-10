@@ -1,37 +1,37 @@
-package model.remote;
+package model.device;
 
-public interface Device{
+public abstract class Device{
     private boolean on = false;
     private int channel = 1;
     private int volume = 50;
 
-    boolean isEnabled(){
+    public boolean isEnabled(){
         return this.on;
     }
     
-    void enable(){
+    public void enable(){
         this.on = true;
     }
-    void disable(){
+    public void disable(){
         this.on = false;
     }
 
-    int getVolume(){
+    public int getVolume(){
         return this.volume;
     }
 
-    void setVolume(int percent){
+    public void setVolume(int percent){
         this.volume= percent;
     };
-    String getChannel(){
+    public int getChannel(){
         return this.channel;
     }
 
-    void setChannel(int channel){
+    public void setChannel(int channel){
         this.channel = channel;
     }
     
-    public abstract void printStatus();
+    public abstract  void printStatus();
 
     @Override
     public String toString() {
